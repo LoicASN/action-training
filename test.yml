@@ -1,0 +1,12 @@
+name : ali
+age: 28
+active: true
+
+key: 
+  otherkey: value
+  key: 2
+
+array: 
+    - item 1
+    - item 2
+    - {key: value}
