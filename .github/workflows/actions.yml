@@ -1,0 +1,26 @@
+name : Actions Worflow
+
+on: [push]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+      - name: Checkout 
+        uses: actions/checkout@v3
+      - name: List Files After Checkout
+        run: |
+          pwd
+          ls -a
+      - name: Simple JS Action
+        id: greet
+        uses: actions/hello-world-javascript-action@main #we are tapping into a repo here
+        with:
+          who-to-greet: Loic # take an input
+      - name: log greet time
+        run: echo "${{steps.greet.outputs.time}}"
+      - continue-on-error: false
