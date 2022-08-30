@@ -23,4 +23,4 @@ jobs:
           who-to-greet: Loic # take an input
       - name: log greet time
         run: echo "${{steps.greet.outputs.time}}"
-      - continue-on-error: false
+  
